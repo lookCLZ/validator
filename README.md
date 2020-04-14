@@ -8,19 +8,18 @@ Package validator
 [![GoDoc](https://godoc.org/github.com/go-playground/validator?status.svg)](https://godoc.org/github.com/go-playground/validator)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
-Package validator implements value validations for structs and individual fields based on tags.
+validator包实现对值和结构的验证是基于tag标签的。
 
-It has the following **unique** features:
-
--   Cross Field and Cross Struct validations by using validation tags or custom validators.  
--   Slice, Array and Map diving, which allows any or all levels of a multidimensional field to be validated.
--   Ability to dive into both map keys and values for validation  
--   Handles type interface by determining it's underlying type prior to validation.
--   Handles custom field types such as sql driver Valuer see [Valuer](https://golang.org/src/database/sql/driver/types.go?s=1210:1293#L29)
--   Alias validation tags, which allows for mapping of several validations to a single tag for easier defining of validations on structs
--   Extraction of custom defined Field Name e.g. can specify to extract the JSON name while validating and have it available in the resulting FieldError
--   Customizable i18n aware error messages.
--   Default validator for the [gin](https://github.com/gin-gonic/gin) web framework; upgrading from v8 to v9 in gin see [here](https://github.com/go-playground/validator/tree/master/_examples/gin-upgrading-overriding)
+下面是它的一些特性：
+- 跨字段和跨结构验证，通过使用tag标签或者自定义验证程序。
+- 切片、数组、map，可以验证多维字段和所有层级。
+- 可以深入map的key和value进行验证。
+- 处理interface类型会先确定它的基础字段类型。
+- 处理自定义类型，如sql驱动值，请查看 [这里](https://golang.org/src/database/sql/driver/types.go?s=1210:1293#L29)
+- 可以给一组验证规则定义一个别名，以便于在结构体上验证。
+- 提取自定义的字段名，例如提取出JSON名，然后将此JSON名用于返回给用户。
+- 可以定制i18n,感知错误信息。
+- 是著名框架[gin](https://github.com/gin-gonic/gin)默认的验证器。将gin使用的v8版本升级到v9版本，请看[这里](https://github.com/go-playground/validator/tree/master/_examples/gin-upgrading-overriding)
 
 Installation
 ------------
