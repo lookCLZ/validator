@@ -1,4 +1,4 @@
-Package validator
+validator包
 ================
 <img align="right" src="https://raw.githubusercontent.com/go-playground/validator/v9/logo.png">[![Join the chat at https://gitter.im/go-playground/validator](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-playground/validator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![Project status](https://img.shields.io/badge/version-10.1.0-green.svg)
@@ -21,45 +21,34 @@ validator包实现对值和结构的验证是基于tag标签的。
 - 可以定制i18n,感知错误信息。
 - 是著名框架[gin](https://github.com/gin-gonic/gin)默认的验证器。将gin使用的v8版本升级到v9版本，请看[这里](https://github.com/go-playground/validator/tree/master/_examples/gin-upgrading-overriding)
 
-Installation
+使用：
 ------------
-
-Use go get.
-
 	go get github.com/go-playground/validator/v10
-
-Then import the validator package into your own code.
-
 	import "github.com/go-playground/validator/v10"
 
-Error Return Value
+返回错误值
 -------
 
-Validation functions return type error
-
-They return type error to avoid the issue discussed in the following, where err is always != nil:
-
-* http://stackoverflow.com/a/29138676/3158232
-* https://github.com/go-playground/validator/issues/134
-
-Validator only InvalidValidationError for bad validation input, nil or ValidationErrors as type error; so, in your code all you need to do is check if the error returned is not nil, and if it's not check if error is InvalidValidationError ( if necessary, most of the time it isn't ) type cast it to type ValidationErrors like so:
+验证函数返回类型错误
+返回类型错误，err总是不为nil:
+仅仅验证器InvalidValidationError用于错误验证的输入，nil或ValidationErrors作为错误类型错误。在代码中，仅仅需要检查返回的err是否为nil,以及检查err为InvalidValidationError的类型(一般不需要检查的这么仔细)。示例代码如下：
 
 ```go
 err := validate.Struct(mystruct)
 validationErrors := err.(validator.ValidationErrors)
  ```
 
-Usage and documentation
+用例和文档
 ------
 
-Please see https://godoc.org/github.com/go-playground/validator for detailed usage docs.
+请查看 https://godoc.org/github.com/go-playground/validator for detailed usage docs.
 
 ##### Examples:
 
-- [Simple](https://github.com/go-playground/validator/blob/master/_examples/simple/main.go)
-- [Custom Field Types](https://github.com/go-playground/validator/blob/master/_examples/custom/main.go)
-- [Struct Level](https://github.com/go-playground/validator/blob/master/_examples/struct-level/main.go)
-- [Translations & Custom Errors](https://github.com/go-playground/validator/blob/master/_examples/translations/main.go)
+- [基础](https://github.com/go-playground/validator/blob/master/_examples/simple/main.go)
+- [自定义字段类型](https://github.com/go-playground/validator/blob/master/_examples/custom/main.go)
+- [结构体类型](https://github.com/go-playground/validator/blob/master/_examples/struct-level/main.go)
+- [翻译与自定义错误](https://github.com/go-playground/validator/blob/master/_examples/translations/main.go)
 - [Gin upgrade and/or override validator](https://github.com/go-playground/validator/tree/v9/_examples/gin-upgrading-overriding)
 - [wash - an example application putting it all together](https://github.com/bluesuncorp/wash)
 
