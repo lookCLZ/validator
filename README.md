@@ -41,7 +41,7 @@ validationErrors := err.(validator.ValidationErrors)
 用例和文档
 ------
 
-请查看 https://godoc.org/github.com/go-playground/validator for detailed usage docs.
+请查看 https://godoc.org/github.com/go-playground/validator 有详细的描述和用例。
 
 ##### 用例:
 
