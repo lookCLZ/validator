@@ -29,8 +29,8 @@ validator包实现对值和结构的验证是基于tag标签的。
 返回错误值
 -------
 
-验证函数返回类型错误
-返回类型错误，err总是不为nil:
+验证函数返回类型错误<br>
+返回类型错误，err总是不为nil:<br>
 仅仅验证器InvalidValidationError用于错误验证的输入，nil或ValidationErrors作为错误类型错误。在代码中，仅仅需要检查返回的err是否为nil,以及检查err为InvalidValidationError的类型(一般不需要检查的这么仔细)。示例代码如下：
 
 ```go
