@@ -43,18 +43,18 @@ validationErrors := err.(validator.ValidationErrors)
 
 请查看 https://godoc.org/github.com/go-playground/validator for detailed usage docs.
 
-##### Examples:
+##### 用例:
 
 - [基础](https://github.com/go-playground/validator/blob/master/_examples/simple/main.go)
 - [自定义字段类型](https://github.com/go-playground/validator/blob/master/_examples/custom/main.go)
 - [结构体类型](https://github.com/go-playground/validator/blob/master/_examples/struct-level/main.go)
 - [翻译与自定义错误](https://github.com/go-playground/validator/blob/master/_examples/translations/main.go)
-- [Gin upgrade and/or override validator](https://github.com/go-playground/validator/tree/v9/_examples/gin-upgrading-overriding)
-- [wash - an example application putting it all together](https://github.com/bluesuncorp/wash)
+- [gin升级或覆盖validator](https://github.com/go-playground/validator/tree/v9/_examples/gin-upgrading-overriding)
+- [清洗 - 将所有用例放置在一起](https://github.com/bluesuncorp/wash)
 
-Benchmarks
+基准测试
 ------
-###### Run on MacBook Pro (15-inch, 2017) go version go1.10.2 darwin/amd64
+###### 运行于Mac pro (15-inch, 2017) go 版本 go1.10.2 darwin/amd64
 ```go
 goos: darwin
 goarch: amd64
@@ -123,19 +123,11 @@ BenchmarkOneof-8                                                10000000        
 BenchmarkOneofParallel-8                                        20000000                70.1 ns/op             0 B/op          0 allocs/op
 ```
 
-Complementary Software
+补充软件
 ----------------------
+这里有一系列软件，用于在验证之前或之后，补充validator包。
 
-Here is a list of software that complements using this library either pre or post validation.
+* [form](https://github.com/go-playground/form) - 解码 url.Values 成 go 语言的值 以及 编码 go 值 成为url.Values。支持二位数组和所有map。
+* [mold](https://github.com/go-playground/mold) - 一个通用库，帮助修改和设置结构体或其他对象的数据。
 
-* [form](https://github.com/go-playground/form) - Decodes url.Values into Go value(s) and Encodes Go value(s) into url.Values. Dual Array and Full map support.
-* [mold](https://github.com/go-playground/mold) - A general library to help modify or set data within data structures and other objects
-
-How to Contribute
-------
-
-Make a pull request...
-
-License
-------
-Distributed under MIT License, please see license file within the code for more details.
+俗译：liuhongrui/护卫神
